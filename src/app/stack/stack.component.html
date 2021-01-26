@@ -2,22 +2,21 @@
   <div class="column left-sidebar left">
     <div class="ui fluid left vertical">
       <div class="sidebar-total-questions">
-        <h3 class="ui grey header">Search Filters</h3>
+     
         <form (ngSubmit)="onSubmit()" [formGroup]="form">
           <div *ngFor="let field of fields, let i = index" class="form-row">
             <app-form-field [field]="field" *ngIf="i < 11" [form]="form"></app-form-field>
           </div>
-          <details>
-            <summary>Show more filters</summary>
+            
             <div *ngFor="let field of fields, let i = index" class="form-row">
               <app-form-field [field]="field" *ngIf="i >= 11" [form]="form"></app-form-field>
             </div>
-          </details>
+        
 
           <div class="form-row">
             <button type="submit" [disabled]="!form.valid" [ngClass]="{loading: isLoading}"
-              class="ui labeled icon button">
-              <i class="stack overflow icon"></i>Run
+              class="ui labeled icon button" style="color:rebeccapurple">
+              <i class="stack overflow icon"></i>Check
             </button>
           </div>
         </form>
@@ -98,7 +97,7 @@
     <!--items closed-->
     <div class="ui pagination">
 
-      <ul *ngIf="pager.pages && pager.pages.length" class="ui small pagination menu">
+      <ul *ngIf="pager.pages && pager.pages.length" class="ui small pagination menu" style="border-color:rebeccapurple;background:aliceblue">
         <li [ngClass]="{disabled:pager.currentPage === 1}">
           <a (click)="setPage(1)" class="item">First</a>
         </li>
@@ -118,8 +117,7 @@
     </div>
     <ng-template #emptyView>
       <h2 class="ui icon header aligned center">
-        <i class="circular stack overflow icon"></i>
-        StackFlow <br /> <small>{{ headerText }}</small>
+        <small>{{ headerText }}</small>
       </h2>
     </ng-template>
   </div>
