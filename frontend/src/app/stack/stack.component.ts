@@ -8,12 +8,12 @@ import { PageService } from './classes/page.service';
 
 @Component({
   selector: 'app-stack',
-  templateUrl: './dynamic-form.component.html',
-  styles: ['./dynamic-form.component.css'],
+  templateUrl: './stack.component.html',
+  // styles: ['./dynamic-form.component.css'],
   providers: [ FormControlService, PageService ]
 })
 
-export class DynamicFormComponent implements OnInit {
+export class StackComponent implements OnInit {
   @Input() fields: FormFieldBase<string>[] = [];
   form: FormGroup;
   payload: any[] = [];

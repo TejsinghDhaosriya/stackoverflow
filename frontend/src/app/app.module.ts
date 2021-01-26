@@ -7,14 +7,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 
-import { DynamicFormComponent } from './stack/dynamic-form.component'
-import { DynamicFormFieldComponent } from './stack/dynamic-form-field.component';
+import { StackComponent } from './stack/stack.component'
+import { DynamicFormFieldComponent } from './stack/static-form-field.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DynamicFormComponent,
+    StackComponent,
     DynamicFormFieldComponent,
 
   ],
