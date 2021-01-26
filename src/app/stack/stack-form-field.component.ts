@@ -9,7 +9,7 @@ import { FormFieldBase } from './classes/form-field-base'
   selector: 'app-form-field',
   templateUrl: './stack-form-field.component.html'
 })
-export class DynamicFormFieldComponent  {
+export class StackFormFieldComponent  {
   @Input() field: FormFieldBase<string>;
   @Input() form: FormGroup;
 
