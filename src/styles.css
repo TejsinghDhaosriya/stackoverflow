@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+You can add global styles to this file, and also import other style files
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -135,6 +135,7 @@ pre.highlight {
 .stats {
   padding: 0em;
   border-bottom: none;
+  /* border:black */
 }
 .stats.menu {
   margin: 0em;
@@ -187,7 +188,7 @@ pre.highlight {
 }
 .ui.items>.item>.stats>.votes {}
 .ui.items>.item>.stats>.answers {
-  background: #5fba7d;
+  /* background: #5fba7d; */
   color: #fff;
   font-size: 0.6rem;
 }

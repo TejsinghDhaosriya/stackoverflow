@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Stackflow-angular": {
+    "stackoverflow": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Stackflow-angular",
+            "outputPath": "dist/stackoverflow",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Stackflow-angular:build"
+            "browserTarget": "stackoverflow:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Stackflow-angular:build:production"
+              "browserTarget": "stackoverflow:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Stackflow-angular:build"
+            "browserTarget": "stackoverflow:build"
           }
         },
         "test": {
@@ -115,18 +115,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Stackflow-angular:serve"
+            "devServerTarget": "stackoverflow:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Stackflow-angular:serve:production"
+              "devServerTarget": "stackoverflow:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "Stackflow-angular",
+  "defaultProject": "stackoverflow",
   "cli": {
     "analytics": "611545f9-c8b4-4af1-b87a-866f8a82376d"
   }

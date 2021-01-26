@@ -9,7 +9,7 @@ import { PageService } from './classes/page.service';
 @Component({
   selector: 'app-stack',
   templateUrl: './stack.component.html',
-  // styles: ['./dynamic-form.component.css'],
+ 
   providers: [ FormControlService, PageService ]
 })
 
@@ -23,7 +23,7 @@ export class StackComponent implements OnInit {
   //paged items
   pagedItems: any[];
   isLoading: boolean = false;
-  headerText: String = "No Data Found, Search Using Filters"
+  headerText: String = "No Data Found"
 
   constructor(private fcs: FormControlService, 
               private http: HttpClient,
