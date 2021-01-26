@@ -1,18 +1,11 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": "c675fcea-c049-463c-9962-26c73c36a2b4"
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "STACKOVERFLOW": {
+    "Stackflow-angular": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -20,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/STACKOVERFLOW",
+            "outputPath": "dist/Stackflow-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -31,9 +24,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -46,6 +43,7 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
+              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -53,13 +51,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ]
             }
@@ -68,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "STACKOVERFLOW:build"
+            "browserTarget": "Stackflow-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "STACKOVERFLOW:build:production"
+              "browserTarget": "Stackflow-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "STACKOVERFLOW:build"
+            "browserTarget": "Stackflow-angular:build"
           }
         },
         "test": {
@@ -94,6 +92,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -116,16 +115,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "STACKOVERFLOW:serve"
+            "devServerTarget": "Stackflow-angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "STACKOVERFLOW:serve:production"
+              "devServerTarget": "Stackflow-angular:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "STACKOVERFLOW"
+  "defaultProject": "Stackflow-angular",
+  "cli": {
+    "analytics": "611545f9-c8b4-4af1-b87a-866f8a82376d"
+  }
 }

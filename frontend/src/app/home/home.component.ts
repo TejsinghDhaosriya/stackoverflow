@@ -1,29 +1,22 @@
-// import { Component, OnInit } from '@angular/core';
-// import { Home } from './home';
+import { Component, OnInit } from '@angular/core';
 
-// import { FormFieldService } from '../stack/form-field.service';
-// import { FormFieldBase } from '../stack/form-field-base'
-// import { Observable } from 'rxjs';
+import { FormFieldService } from '../stack/classes/form-field.service';
+import { FormFieldBase } from '../stack/classes/form-field-base'
+import { Observable } from 'rxjs';
 
-// @Component({
-//   selector: 'app-home',
-//   templateUrl: './home.component.html',
-//   styleUrls: ['./home.component.css'],
-//   providers:[FormFieldService]
-// })
-// export class HomeComponent implements OnInit {
-//   // name:string = "Stack Query App"
-//   data: Observable<FormFieldBase<any>[]>;
-//   pers:Home[]= [];
-//   constructor() { 
-//   }
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
 
-//   ngOnInit(): void {
-//     // this.pers.push(new Home(1,"tej",12))
-//     // this.pers.push(new Home(1,"tej",12))
-//     // this.pers.push(new Home(1,"tej",12))
-//     // this.pers.push(new Home(1,"tej",12))
-//   this.data = this.service.getFormFields();
-//   }
+  providers: [FormFieldService]
+})
+export class HomeComponent implements OnInit {
+  fields$: Observable<FormFieldBase<any>[]>;
 
-// }
+  constructor(private service: FormFieldService) {
+   }
+
+  ngOnInit(): void {
+    this.fields$ = this.service.getFormFields();
+  }
+}

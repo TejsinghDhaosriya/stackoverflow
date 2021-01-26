@@ -1,0 +1,20 @@
+<!--Responsible for rendering a single form field 
+    depending on its type -->
+<div [formGroup]="form" class="form-group ui labeled input" 
+            [ngClass]="{'has-error': !isValid}">
+    <label class="ui label control-label" [attr.for]="field.key">{{field.label}}</label>
+
+    <div [ngSwitch]="field.controlType">
+        <input class="form-control" *ngSwitchCase="'textbox'" [formControlName]="field.key"
+            [id]="field.key" [type]="field.type">
+
+        <select class="form-control" [id]="field.key" *ngSwitchCase="'dropdown'"
+            [formControlName]="field.key">
+            <option *ngFor="let opt of field.options; let i = index" [value]="opt.value" >
+                {{opt.key}}
+            </option>
+        </select>
+    </div>
+
+    <div class="errorMessagge" *ngIf="!isValid">{{ field.label }} is required</div>
+</div>
