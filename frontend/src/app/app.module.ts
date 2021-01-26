@@ -7,13 +7,14 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
-import { ListPageComponent } from './list-page/list-page.component';
+import { StackComponent } from './stack/stack.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ListPageComponent,
+    StackComponent,
+ 
   ],
   imports: [
     BrowserModule,
